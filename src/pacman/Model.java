@@ -55,7 +55,7 @@ public class Model extends JPanel implements ActionListener {
     private final int maxSpeed = 6;
 
     private int currentSpeed = 3;
-    private short[] screenData;
+    private int[] screenData;
     private Timer timer;
 
     public Model() {
@@ -79,7 +79,7 @@ public class Model extends JPanel implements ActionListener {
     }
     private void initVariables() {
 
-        screenData = new short[N_BLOCKS * N_BLOCKS];
+        screenData = new int[N_BLOCKS * N_BLOCKS];
         d = new Dimension(400, 400);
         ghost_x = new int[MAX_GHOSTS];
         ghost_dx = new int[MAX_GHOSTS];
@@ -246,7 +246,7 @@ public class Model extends JPanel implements ActionListener {
     private void movePacman() {
 
         int pos;
-        short ch;
+        int ch;
 
         if (pacman_x % BLOCK_SIZE == 0 && pacman_y % BLOCK_SIZE == 0) {
             pos = pacman_x / BLOCK_SIZE + N_BLOCKS * (int) (pacman_y / BLOCK_SIZE);
